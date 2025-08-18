@@ -1,0 +1,15 @@
+.header {
+  align-self: stretch;
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #41546a;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
