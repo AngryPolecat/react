@@ -1,5 +1,5 @@
 import './App.css'
-import { Header, Footer, Main } from './components'
+import { Header, Footer, Catalog } from './components'
 
 const productData = [
   {
@@ -50,7 +50,7 @@ export const App = () => {
   return (
     <div className="App">
       <Header />
-      <Main catalog={productData} />
+      <Catalog products={productData} />
       <Footer />
     </div>
   )

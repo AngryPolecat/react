@@ -63,3 +63,12 @@
   font-weight: 500;
   color: #0070f3;
 }
+
+.product.sold-out {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.product.sold-out span {
+  color: #ff4d4d;
+}
