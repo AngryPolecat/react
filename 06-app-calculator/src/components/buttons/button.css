@@ -1,0 +1,77 @@
+/* Кнопки +1 и -1 над числовыми кнопками */
+.increment-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.increment,
+.decrement {
+  width: 48%;
+  padding: 15px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.increment {
+  background-color: #3498db;
+}
+
+.increment:hover {
+  background-color: #2980b9;
+}
+
+.decrement {
+  background-color: #9b59b6;
+}
+
+.decrement:hover {
+  background-color: #8e44ad;
+}
+
+/* Кнопки калькулятора */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #4a4a4a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Цвета для операторов, кнопки равно и очистки */
+.operator {
+  background-color: #f39c12;
+}
+
+.operator:hover {
+  background-color: #e67e22;
+}
+
+.equals {
+  background-color: #27ae60;
+}
+
+.equals:hover {
+  background-color: #2ecc71;
+}
+
+.clear {
+  background-color: #e74c3c;
+}
+
+.clear:hover {
+  background-color: #c0392b;
+}
