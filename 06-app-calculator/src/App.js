@@ -16,7 +16,7 @@ const buttons = [
   { name: 9, type: null, action: '9' },
   { name: '×', type: 'operator', action: '*' },
   { name: 0, type: null, action: '0' },
-  { name: ',', type: null, action: ',' },
+  { name: ',', type: null, action: '.' },
   { name: '=', type: 'equals', action: '=' },
   { name: '÷', type: 'operator', action: '/' },
   { name: 'C', type: 'clear', action: 'C' },
@@ -31,12 +31,17 @@ export const App = () => {
   const handlerClickButton = (index) => {
     const action = buttons[index].action
     const type = buttons[index].type
+    const name = buttons[index].name
 
     if (!type) {
       if (display.length < 15) {
+        console.log(action, display.indexOf(','), display.length)
+
+        //if (action !== '.' || (action === '.' && display.indexOf(',') === -1 && display !== '0')) {
         const result = !argRight ? action.toString() : display + action.toString()
         setDisplay(result)
         setArgRight(Number(result))
+        //}
       }
     } else {
       if (type === 'clear') {
@@ -64,6 +69,16 @@ export const App = () => {
     }
   }
 
+  const increment = () => {
+    setArgLeft((prev) => prev + 1)
+    setDisplay((prev) => (Number(prev) + 1).toString())
+  }
+
+  const decrement = () => {
+    setArgLeft((prev) => prev - 1)
+    setDisplay((prev) => (Number(prev) - 1).toString())
+  }
+
   return (
     <div className="App">
       <div className="calculator-container">
@@ -71,8 +86,12 @@ export const App = () => {
         <div className="calculator">
           <Display>{display}</Display>
           <div className="increment-buttons">
-            <Button type="increment">+1</Button>
-            <Button type="decrement">-1</Button>
+            <Button type="increment" click={increment}>
+              +1
+            </Button>
+            <Button type="decrement" click={decrement}>
+              -1
+            </Button>
           </div>
           <div className="buttons">
             {buttons.map((button, index) => (
