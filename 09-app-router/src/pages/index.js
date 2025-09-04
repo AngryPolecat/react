@@ -1,0 +1,7 @@
+export * from './about'
+export * from './cart'
+export * from './category'
+export * from './home'
+export * from './not-found'
+export * from './product-details'
+export * from './thanks'
