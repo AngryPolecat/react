@@ -1,0 +1,7 @@
+export * from './about'
+export * from './home'
+export * from './login'
+export * from './notFound'
+export * from './product'
+export * from './products'
+export * from './search'

@@ -1,7 +1,30 @@
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
+import { Layout } from './components'
+import { Home, About, Products, Product, Login, Search, NotFound } from './pages'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: 'about', element: <About /> },
+      { path: 'products', element: <Products /> },
+      { path: 'product/:productId', element: <Product /> },
+      { path: 'login', element: <Login /> },
+      { path: 'search', element: <Search /> },
+      { path: '*', element: <NotFound /> },
+    ],
+  },
+])
 
 export const App = () => {
-  return <div className="App"></div>
+  return (
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
+  )
 }
 
 //Rus
